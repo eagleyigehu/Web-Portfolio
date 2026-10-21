@@ -28,3 +28,13 @@
   }));
   filter();
 })();
+// Show the nav name only once the hero headline has scrolled out of view,
+// so the name never appears twice on the same screen.
+(() => {
+  const nav = document.querySelector('nav');
+  const heroTitle = document.querySelector('h1');
+  if (!nav || !heroTitle) return;
+  new IntersectionObserver(([entry]) => {
+    nav.classList.toggle('name-on', !entry.isIntersecting);
+  }).observe(heroTitle);
+})();
