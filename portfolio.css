@@ -58,3 +58,24 @@
 @media(max-width:768px) { .nav-links { gap:.9rem; } .nav-links a { font-size:.6rem;letter-spacing:.05em; } .work-feature-info { padding:1.5rem; } .work-feature-visual { min-height:300px; } .theme-list { grid-template-columns:1fr;gap:1.8rem; } .archive-card { grid-template-columns:90px 1fr;gap:1rem; } .archive-image { width:90px;height:90px; } .archive-link { grid-column:2;justify-self:start; } .hero-project { max-width:520px; } }
 @media(max-width:500px) { .nav-links { display:flex;gap:.8rem; } .nav-links .optional-nav { display:none; } .nav-name { font-size:.85rem; } .hero { padding-top:7rem; } .hero-title { font-size:3.6rem; } .hero-desc { font-size:1.05rem; } .purpose-grid { grid-template-columns:1fr; } .archive-tools { gap:.7rem; } .archive-tools label:first-child { grid-column:1/-1; } .archive-card h3 { font-size:1.15rem; } .section-intro h2 { font-size:1.9rem; } }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none!important;transition:none!important; } }
+
+/* Merged archive: chips replace the dropdown form (2026-10-21) */
+.archive-tools { display:flex;flex-direction:column;gap:.85rem;margin-bottom:1.1rem; }
+.archive-search { font-family:var(--sans);font-size:.7rem;color:var(--ink-2);max-width:430px; }
+.archive-search input { width:100%;margin-top:.4rem;background:rgba(255,255,255,.18);border:1px solid rgba(26,24,20,.25);border-radius:0;color:var(--ink);padding:.7rem .75rem;font:inherit;min-height:44px; }
+.chip-row { display:flex;flex-wrap:wrap;gap:.45rem;align-items:center; }
+.chip { font-family:var(--sans);font-size:.72rem;letter-spacing:.02em;color:var(--ink);background:transparent;border:1px solid rgba(26,24,20,.4);border-radius:999px;padding:.5rem .95rem;cursor:pointer;min-height:38px; }
+.chip:hover { background:rgba(255,255,255,.25); }
+.chip.is-active { background:var(--ink);color:var(--paper);border-color:var(--ink); }
+.chip-row-small { gap:.35rem; }
+.chip-row-label { font-family:var(--mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.12em;color:#5d5a50;margin-right:.2rem; }
+.chip-small { font-size:.66rem;padding:.32rem .7rem;min-height:30px; }
+.cat-blurb { font-size:1.02rem;line-height:1.5;color:var(--ink);margin:.15rem 0 0; }
+.cat-keys { font-family:var(--mono);font-size:.62rem;letter-spacing:.05em;color:#5d5a50;margin:.1rem 0 0;min-height:.8rem; }
+.singles { margin-top:2.5rem; }
+.singles-note { font-size:.85rem;color:var(--ink-2);margin:.4rem 0 1rem; }
+.singles-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem; }
+.singles-grid figure { margin:0; }
+.singles-grid img { width:100%;aspect-ratio:1;object-fit:cover;display:block; }
+.singles-grid figcaption { font-family:var(--mono);font-size:.6rem;color:#5d5a50;margin-top:.35rem; }
+@media(max-width:768px) { .singles-grid { grid-template-columns:repeat(2,1fr); } }
