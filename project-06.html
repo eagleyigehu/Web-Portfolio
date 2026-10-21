@@ -99,7 +99,7 @@
   }
   .hero-left-bg {
     position: absolute; inset: 0;
-    background-image: url('comic-01.jpg');
+    background-image: url('https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/comic-01.jpg');
     background-size: cover; background-position: center;
     opacity: 0.18; mix-blend-mode: luminosity;
   }
@@ -368,14 +368,14 @@
     #zone-next { right: -2%; }
   }
 </style>
-</head>
+<link rel="stylesheet" href="case.css"></head>
 <body>
 
 <div class="cursor" id="cursor"></div>
 <div id="scroll-bar"></div>
 
 <nav>
-  <a href="index.html" class="nav-back">← Back</a>
+  <a href="index.html#archive" class="nav-back">← Back</a>
   <span class="nav-right">Illustration Storybook · 2026</span>
 </nav>
 
@@ -388,20 +388,20 @@
     <p class="hero-subtitle reveal d2">A graphic narrative in 26 pages</p>
   </div>
   <div class="hero-right">
-    <span class="hero-tag reveal">Cultural Extension · Diving Club · Print</span>
-    <p class="hero-desc reveal d1">A nature-inspired cultural extension designed for the diving community — celebrating the connection between breath, movement, and quiet wonder beneath the surface.</p>
+    <span class="hero-tag reveal">Personal Narrative · Print · Concept Applications</span>
+    <p class="hero-desc reveal d1">A personal story about learning to dive and finding a way back to communication. Its visual language extends into a series of product mockups for the diving community.</p>
     <div class="hero-meta reveal d2">
       <div><strong>For</strong> — Divers. By Divers. With Nature.</div>
       <div><strong>Medium</strong> — Mixed media, risograph-style print</div>
-      <div><strong>Products</strong> — T-shirt · Tote bag · Zip pouch · Enamel mug</div>
+      <div><strong>Product mockups</strong> — T-shirt · Tote bag · Zip pouch · Enamel mug</div>
     </div>
   </div>
-</section>
+</section><aside class="case-brief" aria-label="Project overview"><h2>A 26-page personal graphic narrative shaped by learning to dive in Lanzarote.</h2><dl><div><dt>Purpose</dt><dd>Exhibitions & narrative experiences</dd></div><div><dt>My contribution</dt><dd>Personal graphic narrative, mixed-media collage &amp; editorial layout.</dd></div><div><dt>Outputs & status</dt><dd>26-page comic · Duotone visual language · Product mockups<br>Graphic narrative + concept applications</dd></div></dl><p>Lanzarote · Diving experience · 2026</p></aside>
 
 <!-- ═══════ MOCKUP ═══════ -->
 <div class="mockup-section reveal">
-  <p class="mockup-label">Nature-Inspired Cultural Extension · For the Diving Club</p>
-  <img class="mockup-img" src="mockup.png" alt="Product mockup — T-shirt, tote bag, zip pouch, enamel mug"/>
+  <p class="mockup-label">Concept applications · Product mockups</p>
+  <img class="mockup-img" src="https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/mockup.png" alt="Product mockup — T-shirt, tote bag, zip pouch, enamel mug"/>
 </div>
 
 <!-- ═══════ ABOUT CELLS ═══════ -->
@@ -433,8 +433,8 @@
   <div style="padding: 0 8vw; position: relative;">
     <div id="reader">
       <div id="spread" class="single">
-        <img id="page-l" src="comic-01.jpg" alt="Page 1"/>
-        <img id="page-r" src="comic-02.jpg" alt="Page 2" style="display:none"/>
+        <img id="page-l" src="https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/comic-01.jpg" alt="Page 1"/>
+        <img id="page-r" src="https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/comic-02.jpg" alt="Page 2" style="display:none"/>
       </div>
 
       <!-- click zones -->
@@ -471,14 +471,14 @@
   <div class="colophon-right">
     <p class="col-label">Medium</p>
     <p class="col-text">Mixed media collage · Risograph-style duotone print · Adobe InDesign</p>
-    <p class="col-label">Applied Design</p>
+    <p class="col-label">Concept Applications</p>
     <p class="col-text">T-shirt · Tote bag · Zip pouch · Enamel mug<br>For Divers. By Divers. With Nature.</p>
   </div>
 </div>
 
 <div class="project-nav">
-  <a href="project-05.html">← Spatial Data Narratives</a>
-  <a href="index.html">All Projects →</a>
+  <a href="skywatch.html">← SkyWatch</a>
+  <a href="index.html#archive">All Projects →</a>
 </div>
 
 <script>
@@ -534,9 +534,9 @@ function goTo(idx) {
     const [lp, rp] = spreads[idx];
     const single = rp === null;
     spreadEl.className = single ? 'single' : '';
-    pageL.src = `comic-${pad(lp)}.jpg`;
+    pageL.src = `https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/comic-${pad(lp)}.jpg`;
     pageR.style.display = single ? 'none' : 'block';
-    if (!single) pageR.src = `comic-${pad(rp)}.jpg`;
+    if (!single) pageR.src = `https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/comic-${pad(rp)}.jpg`;
     pcCur.textContent = single ? lp : `${lp}–${rp}`;
     [btnPrev, barPrev].forEach(b => b.disabled = idx === 0);
     [btnNext, barNext].forEach(b => b.disabled = idx === TOTAL_SPREADS - 1);
@@ -551,7 +551,7 @@ function goTo(idx) {
 spreads.forEach(([lp], idx) => {
   const img = document.createElement('img');
   img.className = 'thumb' + (idx === 0 ? ' active' : '');
-  img.src = `comic-${pad(lp)}.jpg`;
+  img.src = `https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/comic-${pad(lp)}.jpg`;
   img.alt = `Spread ${idx+1}`;
   img.addEventListener('click', () => goTo(idx));
   thumbs.appendChild(img);
@@ -570,5 +570,6 @@ document.addEventListener('keydown', e => {
   }
 });
 </script>
-</body>
+<div class="case-return"><a href="index.html#latest">← Selected work</a><a href="index.html#contact">Discuss a collaboration →</a></div></body>
 </html>
+
