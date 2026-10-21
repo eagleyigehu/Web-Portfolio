@@ -99,7 +99,7 @@
   }
   .hero-left-bg {
     position: absolute; inset: 0;
-    background-image: url('https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/comic-01.jpg');
+    background-image: url('comic-01.jpg');
     background-size: cover; background-position: center;
     opacity: 0.18; mix-blend-mode: luminosity;
   }
@@ -401,7 +401,7 @@
 <!-- ═══════ MOCKUP ═══════ -->
 <div class="mockup-section reveal">
   <p class="mockup-label">Concept applications · Product mockups</p>
-  <img class="mockup-img" src="https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/mockup.png" alt="Product mockup — T-shirt, tote bag, zip pouch, enamel mug"/>
+  <img class="mockup-img" src="mockup.png" alt="Product mockup — T-shirt, tote bag, zip pouch, enamel mug"/>
 </div>
 
 <!-- ═══════ ABOUT CELLS ═══════ -->
@@ -433,8 +433,8 @@
   <div style="padding: 0 8vw; position: relative;">
     <div id="reader">
       <div id="spread" class="single">
-        <img id="page-l" src="https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/comic-01.jpg" alt="Page 1"/>
-        <img id="page-r" src="https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/comic-02.jpg" alt="Page 2" style="display:none"/>
+        <img id="page-l" src="comic-01.jpg" alt="Page 1"/>
+        <img id="page-r" src="comic-02.jpg" alt="Page 2" style="display:none"/>
       </div>
 
       <!-- click zones -->
@@ -534,9 +534,9 @@ function goTo(idx) {
     const [lp, rp] = spreads[idx];
     const single = rp === null;
     spreadEl.className = single ? 'single' : '';
-    pageL.src = `https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/comic-${pad(lp)}.jpg`;
+    pageL.src = `comic-${pad(lp)}.jpg`;
     pageR.style.display = single ? 'none' : 'block';
-    if (!single) pageR.src = `https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/comic-${pad(rp)}.jpg`;
+    if (!single) pageR.src = `comic-${pad(rp)}.jpg`;
     pcCur.textContent = single ? lp : `${lp}–${rp}`;
     [btnPrev, barPrev].forEach(b => b.disabled = idx === 0);
     [btnNext, barNext].forEach(b => b.disabled = idx === TOTAL_SPREADS - 1);
@@ -551,7 +551,7 @@ function goTo(idx) {
 spreads.forEach(([lp], idx) => {
   const img = document.createElement('img');
   img.className = 'thumb' + (idx === 0 ? ' active' : '');
-  img.src = `https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/comic-${pad(lp)}.jpg`;
+  img.src = `comic-${pad(lp)}.jpg`;
   img.alt = `Spread ${idx+1}`;
   img.addEventListener('click', () => goTo(idx));
   thumbs.appendChild(img);

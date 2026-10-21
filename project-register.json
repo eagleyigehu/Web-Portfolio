@@ -233,18 +233,21 @@
       "purpose": "exploration",
       "secondary": [],
       "themes": [
-        "exploration"
+        "migration",
+        "memory"
       ],
       "media": [
-        "drawing"
+        "pastel",
+        "collage",
+        "ink"
       ],
-      "short": "An illustration project from the original portfolio.",
-      "outputs": "Illustration",
+      "short": "A three-part illustrated storybook exploring migration, memory, and the creatures we carry with us.",
+      "outputs": "Illustrated storybook · 3 chapters",
       "role": null,
       "context": "Personal exploration",
       "status": "Archive entry",
       "selected": false,
-      "assessment": "Source homepage identifies an illustration project. Full 20 MB detail file could not be read through connector; purpose, dates, role and research relationship remain unverified.",
+      "assessment": "Detail page read in full on 2026-10-21: three chapters (Foresee Obstacles; Running Away with the Raven; Why Fantasize?), pastel, collage and ink, themes of migration and memory verified from the page itself.",
       "source": "https://github.com/eagleyigehu/Web-Portfolio/blob/740ba93c4185c0b23bfd90bee03dd29c038e9257/project-05.html",
       "source_commit": "740ba93c4185c0b23bfd90bee03dd29c038e9257",
       "date_start": null,

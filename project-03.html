@@ -424,7 +424,7 @@
 
 <!-- ═══════════ FULL BLEED 1: Exhibition Overview ═══════════ -->
 <div class="full-bleed reveal">
-  <img src="https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/heylittlebird.jpg" alt="Exhibition overview — Bio-inspired"/>
+  <img src="heylittlebird.jpg" alt="Exhibition overview — Bio-inspired"/>
   <span class="caption">Exhibition overview · Bio-inspired</span>
 </div>
 
@@ -436,7 +436,7 @@
 
 <div class="pair reveal">
   <div class="pair-img">
-    <img src="https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/heylittlebird2.jpg" alt="Individual C50-7665"/>
+    <img src="heylittlebird2.jpg" alt="Individual C50-7665"/>
   </div>
   <div class="pair-text">
     <p class="pair-label">Individual C50-7665</p>
@@ -466,7 +466,7 @@
 
 <div class="pair reveal">
   <div class="pair-img">
-    <img src="https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/heylittlebird6.jpg" alt="Bird Banding and Data"/>
+    <img src="heylittlebird6.jpg" alt="Bird Banding and Data"/>
   </div>
   <div class="pair-text">
     <p class="pair-label">Bird Banding & Data · 2025</p>
@@ -488,7 +488,7 @@
 
 <div class="pair reveal">
   <div class="pair-img">
-    <img src="https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/heylittlebird3.jpg" alt="White-faced Plovers Incubating Eggs"/>
+    <img src="heylittlebird3.jpg" alt="White-faced Plovers Incubating Eggs"/>
   </div>
   <div class="pair-text">
     <p class="pair-label">Scientific Illustration · Charadrius alexandrinus · 26.06.2025</p>
@@ -504,7 +504,7 @@
 
 <!-- ═══════════ FULL BLEED 2 ═══════════ -->
 <div class="full-bleed reveal">
-  <img src="https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/heylittlebird4.jpg" alt="Booklet reading"/>
+  <img src="heylittlebird4.jpg" alt="Booklet reading"/>
   <span class="caption">Artist-led Interpretation · Inside Spread</span>
 </div>
 
@@ -528,8 +528,8 @@
 <div id="flipbook-wrap" class="reveal">
   <div id="flipbook">
     <div id="flipbook-pages" class="single">
-      <img id="page-img-l" src="https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/pages-01.jpg" alt="Booklet page"/>
-      <img id="page-img-r" src="https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/pages-02.jpg" alt="Booklet page" style="display:none"/>
+      <img id="page-img-l" src="pages-01.jpg" alt="Booklet page"/>
+      <img id="page-img-r" src="pages-02.jpg" alt="Booklet page" style="display:none"/>
     </div>
     <div id="flipbook-ui">
       <button id="btn-prev" aria-label="Previous page">←</button>
@@ -552,11 +552,11 @@
 
 <div class="duo reveal">
   <div class="duo-item">
-    <img src="https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/heylittlebird5.jpg" alt="Knowledge Translation and Public Engagement"/>
+    <img src="heylittlebird5.jpg" alt="Knowledge Translation and Public Engagement"/>
     <div class="duo-caption">Knowledge Translation & Public Engagement · Ocarina User Guide · Audience Interaction</div>
   </div>
   <div class="duo-item">
-    <img src="https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/heylittlebird7.jpg" alt="Field work team and curation team"/>
+    <img src="heylittlebird7.jpg" alt="Field work team and curation team"/>
     <div class="duo-caption">Collaborative Realization · From Field to Gallery · Field work team · Curation team</div>
   </div>
 </div>
@@ -598,7 +598,7 @@
 <!-- ═══════════ CLOSING ═══════════ -->
 <div class="closing reveal">
   <div class="closing-poster">
-    <img src="https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/heylittlebird8.jpg" alt="Exhibition poster — Hey Little Bird"/>
+    <img src="heylittlebird8.jpg" alt="Exhibition poster — Hey Little Bird"/>
   </div>
   <div class="closing-dates">
     Private View: Thursday 13th November, 5pm – 7pm<br>
@@ -680,12 +680,12 @@ function goTo(idx) {
     const isSingle = rp === null;
 
     pagesContainer.className = isSingle ? 'single' : '';
-    imgL.src = `https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/pages-${pad(lp)}.jpg`;
+    imgL.src = `pages-${pad(lp)}.jpg`;
     imgL.alt = `Page ${lp}`;
 
     if (!isSingle) {
       imgR.style.display = 'block';
-      imgR.src = `https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/pages-${pad(rp)}.jpg`;
+      imgR.src = `pages-${pad(rp)}.jpg`;
       imgR.alt = `Page ${rp}`;
       pageCur.textContent = `${lp}–${rp}`;
     } else {
@@ -712,7 +712,7 @@ function goTo(idx) {
 spreads.forEach(([lp], idx) => {
   const img = document.createElement('img');
   img.className = 'thumb' + (idx === 0 ? ' active' : '');
-  img.src = `https://raw.githubusercontent.com/eagleyigehu/Web-Portfolio/740ba93c4185c0b23bfd90bee03dd29c038e9257/pages-${pad(lp)}.jpg`;
+  img.src = `pages-${pad(lp)}.jpg`;
   img.alt = `Spread ${idx + 1}`;
   img.addEventListener('click', () => goTo(idx));
   thumbStrip.appendChild(img);
