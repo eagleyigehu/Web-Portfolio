@@ -197,8 +197,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
 .popup-body{color:#8a7a6a;font-size:12px;line-height:1.6}
 .mapboxgl-ctrl-bottom-right{bottom:28px!important}
 </style>
-</head>
-<body>
+<style>.portfolio-return{position:fixed;right:14px;bottom:8px;z-index:200;background:#f5f2eb;color:#2a5560;padding:8px 12px;border:1px solid #9dc3cc;font:12px system-ui;text-decoration:none}</style></head>
+<body><a class="portfolio-return" href="skywatch.html">← Project overview</a>
 
 <div class="stripe"></div>
 
@@ -209,10 +209,10 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
 <!-- ══ BANNER ══ -->
 <div id="alert-banner">
   <div style="display:flex;align-items:center;gap:12px;flex:1;min-width:0">
-    <span class="alert-pill">CR · ~50 left</span>
-    <span class="alert-copy"><strong>Why this platform exists:</strong> The <em>Chinese Crested Tern</em> is critically endangered — its rocky-islet nesting sites are lost to coastal development. SkyWatch uses GIS to find where <strong>artificial floating platforms</strong> can replace that habitat.</span>
+    <span class="alert-pill">INTERACTIVE PROTOTYPE</span>
+    <span class="alert-copy"><strong>SkyWatch demo:</strong> Explore a proposed floating-habitat workflow for the <em>Chinese Crested Tern</em>. Sightings and scores are illustrative; this is not a validated site-selection tool.</span>
   </div>
-  <span class="alert-goal">Goal: locate floating habitat sites</span>
+  <span class="alert-goal">Design study · Demo data</span>
 </div>
 
 <!-- ══ LOGO ══ -->
@@ -261,7 +261,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
   <div class="panel-body">
     <div class="urgency-note">
       <strong>Every record matters</strong>
-      Only ~50 Chinese Crested Terns remain. Your sighting feeds directly into the habitat suitability model.
+      Try the observation-entry workflow. Entries stay in this page session and reset on reload; they are not sent to researchers or a database.
     </div>
     <button class="pin-btn" id="pin-btn" onclick="togglePin()">📍 Click map to pin location</button>
     <div class="form-row"><label>Species</label>
@@ -281,8 +281,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
     <div class="form-row"><label>Notes</label><textarea id="f-notes" placeholder="Behaviour, habitat, weather…"></textarea></div>
     <div class="form-row"><label>Your name</label><input type="text" id="f-name" placeholder="e.g. Emma H."/></div>
     <button class="submit-btn" onclick="submitSighting()">Submit sighting</button>
-    <p style="font-size:10px;color:var(--muted);margin-top:7px;line-height:1.5">Open data · CC BY 4.0 · Stored in PostGIS</p>
-    <div class="recent-divider">Recent records</div>
+    <p style="font-size:10px;color:var(--muted);margin-top:7px;line-height:1.5">Session-only demo · No database connection</p>
+    <div class="recent-divider">Sample & session records</div>
     <div id="sighting-list"></div>
   </div>
 </div>
@@ -299,7 +299,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
   </div>
   <div class="popover-body">
     <div class="painting-img">
-      <img src="painting_cct.jpg" alt="Watercolour of Chinese Crested Terns" onerror="this.parentElement.style.cssText='height:160px;background:linear-gradient(135deg,#9dc3cc,#bbced2,#dbddd7,#edd7c8);border-radius:7px;display:flex;align-items:center;justify-content:center';this.style.display='none'"/>
+      <p style="padding:1rem;font-size:12px">Illustration not included in the source archive.</p>
     </div>
     <div class="palette-row">
       <span style="background:#9dc3cc"></span><span style="background:#bbced2"></span>
@@ -325,7 +325,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
       <div style="font-size:10px;color:var(--muted);letter-spacing:0.07em;text-transform:uppercase;margin-top:2px">Chinese Crested Tern</div>
       <div class="cr-pill">CR · Critically Endangered · IUCN</div>
     </div>
-    <p style="font-size:11px;color:var(--muted);line-height:1.6;margin-bottom:8px">Each dot = one individual. Approximately <strong style="color:var(--deep)">~50 wild birds</strong> remain.</p>
+    <p style="font-size:11px;color:var(--muted);line-height:1.6;margin-bottom:8px">Illustrative population visual. These dots do not represent a current population estimate.</p>
     <div class="pop-dots" id="sp-dots"></div>
     <div class="fact-grid">
       <div class="fact"><div class="fact-l">Wingspan</div><div class="fact-v">86–94 cm</div></div>
@@ -348,7 +348,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
     <button class="popover-close" onclick="closePop('pop-mca')">×</button>
   </div>
   <div class="popover-body">
-    <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-bottom:14px">Adjust weights to explore how floating platform placement priorities shift. Full build reruns a PostGIS spatial query.</p>
+    <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-bottom:14px">Adjust weights to explore the interface. The score uses fixed demonstration values, not a live spatial analysis. PostGIS integration is a proposed next step.</p>
     <div class="slider-row">
       <div class="sl-header"><span>Food availability (Chl-a)<span class="type-tag pos">+</span></span><span class="sl-val" id="val-food">0.35</span></div>
       <input type="range" min="0" max="1" step="0.05" value="0.35" oninput="updateMCA('food',this.value)"/>
@@ -366,8 +366,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
       <input type="range" min="0" max="1" step="0.05" value="0.20" oninput="updateMCA('sst',this.value)"/>
     </div>
     <div class="score-mini">
-      <div class="score-num" id="mca-score">0.72</div>
-      <div class="score-label">Composite suitability index<br/>top candidate zone average</div>
+      <div class="score-num" id="mca-score">0.47</div>
+      <div class="score-label">Illustrative score<br/>not a site recommendation</div>
     </div>
   </div>
 </div>
@@ -381,9 +381,9 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
     <button class="popover-close" onclick="closePop('pop-mangrove')">×</button>
   </div>
   <div class="popover-body">
-    <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-bottom:14px">Global mangrove cover relative to 1996 baseline (Global Mangrove Watch).</p>
+    <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-bottom:14px">Illustrative timeline presentation; source and values require verification.</p>
     <div id="mang-bars"></div>
-    <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-top:12px">By 2020, approximately <strong style="color:var(--deep)">8.6%</strong> of global mangrove cover — ~11,900 km² — had been lost, directly destroying nesting habitat for the Chinese Crested Tern.</p>
+    <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-top:12px">This prototype explores how habitat-change information could be presented. The chart values require source verification before research or conservation use; no direct causal relationship to tern nesting sites is established here.</p>
   </div>
 </div>
 
@@ -397,11 +397,11 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
   </div>
   <div class="popover-body">
     <div style="width:100%;border-radius:7px;overflow:hidden;margin-bottom:12px;min-height:100px;background:linear-gradient(135deg,rgba(157,195,204,0.2),rgba(246,203,189,0.15));display:flex;align-items:center;justify-content:center">
-      <img src="platform_diagram.jpg" alt="Floating platform diagram" style="width:100%;display:block;border-radius:7px" onerror="this.style.display='none'"/>
+      <p style="padding:1rem;font-size:12px">Illustration not included in the source archive.</p>
     </div>
     <div class="platform-card"><h4>What is a floating platform?</h4><p>An engineered raft anchored in coastal waters, mimicking the rocky-islet conditions Chinese Crested Terns require — in locations where natural sites have been destroyed.</p></div>
-    <div class="platform-card"><h4>How does GIS help?</h4><p>Layering food availability (Chl-a), habitat (mangroves), shipping noise, and SST, the MCA model identifies optimal coordinates for deployment.</p></div>
-    <div class="platform-card"><h4>Expected output</h4><p>A ranked list of candidate sites — e.g. "14.2°N, 122.8°E — suitability 0.82" — giving conservation teams a data-backed starting point.</p></div>
+    <div class="platform-card"><h4>How does GIS help?</h4><p>Layering food availability (Chl-a), habitat (mangroves), shipping noise, and SST, a future validated model could compare candidate areas. This demo does not calculate deployment coordinates.</p></div>
+    <div class="platform-card"><h4>Expected output</h4><p>A ranked list of candidate sites — e.g. "14.2°N, 122.8°E — suitability 0.82" — illustrating a proposed output format, not a verified recommendation.</p></div>
   </div>
 </div>
 
@@ -448,7 +448,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
 
 <div id="cc">
   <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener"><img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="CC BY 4.0"/></a>
-  <span>SkyWatch by <a href="#">Emma Hu</a> — <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></span>
+  <span>SkyWatch by <a href="index.html#home">Emma Hu</a> — <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></span>
 </div>
 
 <div id="toast"></div>
@@ -666,20 +666,22 @@ function submitSighting(){
   const sp=document.getElementById('f-species').value;
   const lat=parseFloat(document.getElementById('f-lat').value);
   const lng=parseFloat(document.getElementById('f-lng').value);
-  const count=parseInt(document.getElementById('f-count').value)||1;
-  const user=document.getElementById('f-name').value||'Anonymous';
+  const count=Number(document.getElementById('f-count').value || 1);
+  if(!Number.isInteger(count)||count<1){showToast('Enter a positive whole-number count.');return;}
+  const user=(document.getElementById('f-name').value||'Anonymous').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const dt=document.getElementById('f-datetime').value;
   if(!sp){showToast('Please select a species.');return;}
-  if(isNaN(lat)||isNaN(lng)){showToast('Please pin a location first.');return;}
+  if(!Number.isFinite(lat)||!Number.isFinite(lng)||lat < -90||lat > 90||lng < -180||lng > 180){showToast('Enter a valid latitude (-90 to 90) and longitude (-180 to 180).');return;}
   sightings.unshift({lat,lng,count,user,
     species:sp==='cct'?'Chinese Crested Tern':sp==='gct'?'Greater Crested Tern':'Unknown tern',
     date:dt?dt.split('T')[0]:new Date().toISOString().split('T')[0]});
-  if(map.getSource('sightings-src'))map.getSource('sightings-src').setData(s2g());
-  renderList();map.flyTo({center:[lng,lat],zoom:6,duration:1600});disablePin();
+  if(map && map.loaded() && map.getSource('sightings-src'))map.getSource('sightings-src').setData(s2g());
+  renderList();if(map)map.flyTo({center:[lng,lat],zoom:6,duration:1600});disablePin();
   ['f-species','f-lat','f-lng','f-count','f-notes','f-name'].forEach(id=>{document.getElementById(id).value='';});
-  showToast('Sighting recorded. Thank you.');
+  showToast('Added to this demo session only. Reloading clears the entry.');
 }
 document.getElementById('f-datetime').value=new Date().toISOString().slice(0,16);
 </script>
 </body>
 </html>
+
