@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help Protect Wildlife · WildAid China — Emma Hu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18;
+    --ink-2: #4a4840;
+    --ink-3: #8a8880;
+    --accent: #5a7a6a;
+    --rule: rgba(26,24,20,0.12);
+    --serif: 'EB Garamond', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: linear-gradient(to bottom, #9dc3cc 0%, #bbced2 20%, #dbddd7 40%, #ebe4da 60%, #edd7c8 80%, #f6cbbd 100%);
+    background-attachment: scroll;
+    background-size: 100% 500vh;
+    background-repeat: no-repeat;
+    background-color: #f6cbbd;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 2.5rem;
+    border-bottom: 0.5px solid var(--rule);
+    background: rgba(157,195,204,0.5);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-back {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--accent); }
+  .nav-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--ink);
+  }
+  .project-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5rem 2.5rem 8rem;
+  }
+  .project-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .project-title {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--ink);
+  }
+  .project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2.5rem;
+    border-top: 0.5px solid var(--rule);
+    border-bottom: 0.5px solid var(--rule);
+    padding: 1.2rem 0;
+    margin-bottom: 3rem;
+  }
+  .meta-label {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+  .meta-value {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--ink-2);
+  }
+  .project-hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 3rem;
+  }
+  .project-body {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--ink-2);
+    line-height: 1.85;
+    margin-bottom: 1.8rem;
+    max-width: 680px;
+  }
+  .project-body strong { color: var(--ink); font-weight: 500; }
+  .project-heading {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--ink);
+    margin: 3rem 0 1rem;
+    border-left: 2px solid var(--accent);
+    padding-left: 1rem;
+  }
+  .image-grid {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .image-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+  .image-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .img-caption {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--ink-3);
+    letter-spacing: 0.08em;
+    margin-top: 0.5rem;
+  }
+  .divider {
+    border: none;
+    border-top: 0.5px solid var(--rule);
+    margin: 4rem 0;
+  }
+  .project-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 0.5px solid var(--rule);
+    margin-top: 5rem;
+    padding-top: 2rem;
+  }
+  .project-nav a {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .project-nav a:hover { color: var(--accent); }
+  @media (max-width: 640px) {
+    .project-wrap { padding: 3rem 1.2rem 5rem; }
+    .image-grid.cols-2 { grid-template-columns: 1fr; }
+    .project-meta { gap: 0.8rem 1.5rem; }
+  }
+</style>
+<link rel="stylesheet" href="case.css"></head>
+<body>
+
+<nav>
+  <a href="index.html#archive" class="nav-back">← Back</a>
+  <span class="nav-title">WildAid China</span>
+</nav>
+
+<div class="project-wrap"><aside class="case-brief" aria-label="Project overview"><h2>A two-page poster pair that helps forest-edge communities in Guangdong protect pangolins and report wildlife crime.</h2><dl><div><dt>Purpose</dt><dd>Science illustration &amp; education, applied as conservation communication for rural community settings.</dd></div><div><dt>My contribution</dt><dd>Brief breakdown, poster design and visual elements: species artwork, composition and the visual scheme, revised through delivery.</dd></div><div><dt>Outputs &amp; status</dt><dd>Two vertical posters, designed and displayed as a pair<br>Delivered 15 Sep 2026</dd></div></dl><p>WildAid China · Creative Communications Intern · Displayed at community sites in Huidong and Zijin counties and at Dongfeng Forest Farm</p></aside>
+
+  <p class="project-eyebrow">WildAid China · Conservation Communication · 2026</p>
+  <h1 class="project-title">Help Protect Wildlife</h1>
+
+  <div class="project-meta">
+    <div class="meta-item">
+      <span class="meta-label">Year</span>
+      <span class="meta-value">2026</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Organisation</span>
+      <span class="meta-value">WildAid China</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Role</span>
+      <span class="meta-value">Creative Communications Intern</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Formats</span>
+      <span class="meta-value">Two-page vertical poster pair</span>
+    </div>
+  </div>
+
+  <div class="image-grid cols-2">
+    <div>
+      <img src="wildaid-poster-1.png" alt="Report Wildlife Crime poster, page one: headline and introduction"/>
+      <p class="img-caption">Wildlife-crime reporting poster · 1 of 2</p>
+    </div>
+    <div>
+      <img src="wildaid-poster-2.png" alt="Report Wildlife Crime poster, page two: what the law prohibits"/>
+      <p class="img-caption">Wildlife-crime reporting poster · 2 of 2</p>
+    </div>
+  </div>
+
+  <p class="project-body">WildAid China needed a public-facing poster pair for communities living alongside forest in eastern Guangdong, where pangolins and other protected species are still hunted illegally. The posters had to work at <strong>community display points</strong>: read at a glance, by everyone, including people who will never stop for a paragraph of small print.</p>
+
+  <h2 class="project-heading">Reading the brief</h2>
+  <p class="project-body">My first task was breaking the brief down. The pair had to persuade residents to report illegal hunting and make the legal consequences clear without turning either sheet into a wall of text. I designed the posters and their visual elements, drawing the species artwork, composing each layout and adjusting the visual scheme through revision rounds to final delivery.</p>
+
+  <h2 class="project-heading">Species people recognise</h2>
+  <p class="project-body">The animals in the posters are the ones residents actually meet on their own hillsides: the <strong>Chinese pangolin</strong>, Reeves's muntjac, the silver pheasant and the masked palm civet. Recognition is the persuasion. A poster about an animal nobody has seen is easy to walk past; a poster about the pangolin in the woods behind the village is not.</p>
+
+  <h2 class="project-heading">A pair, read in sequence</h2>
+  <p class="project-body">The first sheet carries the headline and the reason to act. The second sets out what is prohibited, from mist nets and traps to poisons and explosives, and explains that hunting equipment can be confiscated and offences prosecuted. Splitting the message across two sheets keeps each page legible while letting the pair work as one continuous landscape of local species.</p>
+
+  <div class="project-nav">
+    <a href="index.html#archive">← All Projects</a>
+    <a href="project-03.html">Hey, Little Bird, How Did You Learn To Fly? →</a>
+  </div>
+
+</div>
+<div class="case-return"><a href="index.html#latest">← Selected work</a><a href="index.html#contact">Discuss a collaboration →</a></div></body>
+</html>

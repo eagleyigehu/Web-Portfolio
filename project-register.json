@@ -3,6 +3,40 @@
   "scope": "Seven existing portfolio entries only; not a complete lifetime inventory. No private submission records are included.",
   "projects": [
     {
+      "id": "wildaid-wildlife",
+      "title": "Help Protect Wildlife",
+      "url": "project-07.html",
+      "image": "wildaid-poster-1.png",
+      "year": "2026",
+      "purpose": "explain",
+      "secondary": [
+        "connect"
+      ],
+      "themes": [
+        "connection"
+      ],
+      "media": [
+        "digital",
+        "print"
+      ],
+      "short": "A two-page poster pair helping forest-edge communities in Guangdong protect pangolins and report wildlife crime.",
+      "outputs": "Two vertical posters, designed and displayed as a pair",
+      "role": "Brief breakdown, poster design and visual elements: species artwork, composition, visual scheme revisions.",
+      "context": "WildAid China · Community display points in Huidong & Zijin counties, Dongfeng Forest Farm · Sep–Oct 2026",
+      "status": "Delivered",
+      "selected": false,
+      "assessment": "Commissioned conservation-communication work for a named organisation, with real-world placement. Only the two-page wildlife-crime reporting pair is shown in the portfolio, by Yige's decision.",
+      "date_start": "2026-09-08",
+      "date_end": "2026-10-08",
+      "collaborators": [],
+      "recognition": [],
+      "submission_history": [],
+      "review_required": [
+        "Add full-resolution images of the two displayed posters",
+        "Confirm WildAid is content for the work to appear in the public portfolio"
+      ]
+    },
+    {
       "id": "little-bird",
       "title": "Hey, Little Bird, How Did You Learn To Fly?",
       "url": "project-03.html",
@@ -122,7 +156,7 @@
       "id": "marine-observations",
       "title": "Marine life: field & laboratory observations",
       "url": "project-02.html",
-      "image": "2.png",
+      "image": "rmit-marine-illustration-1.png",
       "year": "2026",
       "purpose": "record",
       "secondary": [
@@ -132,16 +166,17 @@
         "marine"
       ],
       "media": [
+        "painting",
         "drawing",
-        "photography"
+        "digital"
       ],
-      "short": "Documenting marine organisms through field surveys, microscopy, specimen drawing and lab records.",
-      "outputs": "Survey sheets · Biological classification · Specimen drawings · Lab notes",
-      "role": "Student field and laboratory documentation; team sampling credited in the case study.",
+      "short": "An ongoing illustration series drawn from RMIT marine fieldwork, supported by surveys, microscopy and lab records.",
+      "outputs": "2 finished illustrations · Series in progress · Field and laboratory record",
+      "role": "Illustrations developed from first-hand field observation, with species and ecological details checked by the RMIT Marine Biology teaching team.",
       "context": "RMIT Biology · Queenscliff Marine Station · 2026",
-      "status": "Coursework & field documentation",
+      "status": "Series in progress",
       "selected": false,
-      "assessment": "Substantive research-process evidence. Keep accessible under documentation; do not present coursework as commissioned or peer-reviewed research.",
+      "assessment": "Two finished public-facing illustrations now lead the page, with the field and laboratory record as supporting process. The series is ongoing and must not be presented as complete.",
       "source": "https://github.com/eagleyigehu/Web-Portfolio/blob/740ba93c4185c0b23bfd90bee03dd29c038e9257/project-02.html",
       "source_commit": "740ba93c4185c0b23bfd90bee03dd29c038e9257",
       "date_start": null,
@@ -150,6 +185,8 @@
       "recognition": [],
       "submission_history": [],
       "review_required": [
+        "Add full-resolution files for the two finished illustrations",
+        "Confirm RMIT Marine Biology website publication status before claiming the series is live there",
         "Confirm exact dates, individual responsibilities and publication permissions before submissions."
       ]
     },
