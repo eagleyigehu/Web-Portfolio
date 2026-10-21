@@ -3,6 +3,38 @@
   "scope": "Seven existing portfolio entries only; not a complete lifetime inventory. No private submission records are included.",
   "projects": [
     {
+      "id": "sanjiangyuan",
+      "title": "The Reservoir Beyond the Frame",
+      "url": "index-2.html",
+      "image": "sanjiangyuan-cover.jpg",
+      "year": "2026",
+      "purpose": "act",
+      "secondary": [
+        "explain"
+      ],
+      "themes": [
+        "connection"
+      ],
+      "media": [
+        "digital"
+      ],
+      "short": "A long-form data story about Sanjiangyuan, where a few centimetres of alpine turf store the water that becomes the Yangtze, Yellow and Lancang rivers.",
+      "outputs": "Long-form scrollytelling web page · Data graphics · Watercolour plates",
+      "role": "Writing, visual design and front-end build.",
+      "context": "Self-initiated web project · 2026",
+      "status": "Published",
+      "selected": false,
+      "assessment": "Data storytelling squarely on her ecology and data line. Promoted from standalone page to a full archive project by her decision on 2026-10-21.",
+      "date_start": null,
+      "date_end": null,
+      "collaborators": [],
+      "recognition": [],
+      "submission_history": [],
+      "review_required": [
+        "Confirm context (personal project or coursework) before application use"
+      ]
+    },
+    {
       "id": "wildaid-wildlife",
       "title": "Help Protect Wildlife",
       "url": "project-07.html",
