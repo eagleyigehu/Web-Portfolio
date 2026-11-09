@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antarctic Peninsula Expedition — Emma Hu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18;
+    --ink-2: #4a4840;
+    --ink-3: #8a8880;
+    --accent: #3f6d8e;
+    --rule: rgba(26,24,20,0.12);
+    --serif: 'EB Garamond', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: linear-gradient(to bottom, #7fa6ba 0%, #a9c3cf 20%, #cfdade 40%, #e8ece7 60%, #f2ede2 80%, #f6e3d3 100%);
+    background-attachment: scroll;
+    background-size: 100% 500vh;
+    background-repeat: no-repeat;
+    background-color: #f6e3d3;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 2.5rem;
+    border-bottom: 0.5px solid var(--rule);
+    background: rgba(127,166,186,0.5);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-back {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--accent); }
+  .nav-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--ink);
+  }
+  .project-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5rem 2.5rem 8rem;
+  }
+  .project-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .project-title {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--ink);
+  }
+  .project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2.5rem;
+    border-top: 0.5px solid var(--rule);
+    border-bottom: 0.5px solid var(--rule);
+    padding: 1.2rem 0;
+    margin-bottom: 3rem;
+  }
+  .meta-label {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+  .meta-value {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--ink-2);
+  }
+  .project-hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 3rem;
+  }
+  .project-body {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--ink-2);
+    line-height: 1.85;
+    margin-bottom: 1.8rem;
+    max-width: 680px;
+  }
+  .project-body strong { color: var(--ink); font-weight: 500; }
+  .project-heading {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--ink);
+    margin: 3rem 0 1rem;
+    border-left: 2px solid var(--accent);
+    padding-left: 1rem;
+  }
+  .image-grid {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .image-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+  .image-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .img-caption {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--ink-3);
+    letter-spacing: 0.08em;
+    margin-top: 0.5rem;
+  }
+  .species-note {
+    font-family: var(--serif);
+    font-size: 0.98rem;
+    color: var(--ink-2);
+    line-height: 1.6;
+    margin-top: 0.45rem;
+    max-width: 640px;
+  }
+  .species-note em { color: var(--ink); }
+  .checked-line {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin: 1.2rem 0 0.5rem;
+  }
+  .guide-layout {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    gap: 2.2rem;
+    align-items: start;
+    margin: 2rem 0;
+  }
+  .guide-layout img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .guide-notes h3 {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 1.4rem 0 0.5rem;
+  }
+  .guide-notes h3:first-child { margin-top: 0; }
+  .guide-notes p, .guide-notes li {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--ink-2);
+    line-height: 1.65;
+  }
+  .guide-notes ul { list-style: none; }
+  .guide-notes li { padding-left: 1rem; position: relative; margin-bottom: 0.32rem; }
+  .guide-notes li::before { content: "☐"; position: absolute; left: 0; color: var(--ink-3); font-size: 0.72rem; top: 0.1rem; }
+  .guide-notes li.no-box { padding-left: 0; }
+  .guide-notes li.no-box::before { content: ""; }
+  .guide-notes strong { color: var(--ink); font-weight: 500; }
+  .partner-credit {
+    text-align: center;
+    margin-top: 4.5rem;
+  }
+  .partner-credit .pc-label {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .partner-credit img {
+    width: min(300px, 70%);
+    height: auto;
+  }
+  .partner-credit p {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    margin-top: 1rem;
+  }
+  .divider {
+    border: none;
+    border-top: 0.5px solid var(--rule);
+    margin: 4rem 0;
+  }
+  .project-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 0.5px solid var(--rule);
+    margin-top: 5rem;
+    padding-top: 2rem;
+  }
+  .project-nav a {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .project-nav a:hover { color: var(--accent); }
+  @media (max-width: 640px) {
+    .project-wrap { padding: 3rem 1.2rem 5rem; }
+    .image-grid.cols-2 { grid-template-columns: 1fr; }
+    .guide-layout { grid-template-columns: 1fr; }
+    .project-meta { gap: 0.8rem 1.5rem; }
+  }
+</style>
+<link rel="stylesheet" href="case.css"></head>
+<body>
+
+<nav>
+  <a href="index.html#archive" class="nav-back">← Back</a>
+  <span class="nav-title">Antarctic Peninsula Expedition</span>
+</nav>
+
+<div class="project-wrap"><aside class="case-brief" aria-label="Project overview"><h2>Species artwork and a traveller's equipment guide for an Antarctic Peninsula expedition: the animals guests will meet on the ice, and everything they pack to meet them.</h2><dl><div><dt>Purpose</dt><dd>Science illustration &amp; education, applied as expedition communication for a polar voyage programme.</dd></div><div><dt>My contribution</dt><dd>Species illustrations of four Antarctic animals, and the design and layout of the personal equipment checklist, a long-form illustrated guide issued to travellers before departure.</dd></div><div><dt>Outputs &amp; status</dt><dd>Four species illustrations · One long-form equipment checklist, Chinese edition with the full English text alongside<br>Delivered 2026</dd></div></dl><p>Produced for the China National Geographic Voyages Antarctic Peninsula programme</p></aside>
+
+  <p class="project-eyebrow">China National Geographic Voyages · Expedition Communication · 2026</p>
+  <h1 class="project-title">Antarctic Peninsula Expedition</h1>
+
+  <div class="project-meta">
+    <div class="meta-item">
+      <span class="meta-label">Year</span>
+      <span class="meta-value">2026</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Organisation</span>
+      <span class="meta-value">China National Geographic Voyages</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Role</span>
+      <span class="meta-value">Scientific Illustration &amp; Information Design</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Formats</span>
+      <span class="meta-value">Species illustration series · Long-form infographic</span>
+    </div>
+  </div>
+
+  <h2 class="project-heading">Four residents of the Peninsula</h2>
+  <p class="project-body">Before travellers meet Antarctic wildlife in person, they meet it on paper. These four illustrations introduce the species a Peninsula voyage is most likely to encounter: drawn to be recognised again at a distance, through binoculars, on ice and open water.</p>
+  <p class="checked-line">✓ Species identification and notes reviewed by the expedition team's naturalist experts</p>
+
+  <div>
+    <img class="project-hero-img" src="antarctic-humpback-whale.png" alt="Scientific illustration of a humpback whale surfacing, water streaming from its body" style="margin-bottom:0.5rem;"/>
+    <p class="img-caption">01 · Humpback Whale</p>
+    <p class="species-note"><em>Megaptera novaeangliae.</em> A summer visitor to the Peninsula's krill-rich waters. Its pectoral fins are the longest of any whale, up to a third of its body length, and give the genus its name: "great wing".</p>
+  </div>
+
+  <div class="image-grid cols-2">
+    <div>
+      <img src="antarctic-chinstrap-penguin.png" alt="Scientific illustration of a chinstrap penguin standing"/>
+      <p class="img-caption">02 · Chinstrap Penguin</p>
+      <p class="species-note"><em>Pygoscelis antarcticus.</em> Named for the narrow black band under its head. Breeds in large, noisy colonies around the Antarctic Peninsula and feeds mainly on Antarctic krill.</p>
+    </div>
+    <div>
+      <img src="antarctic-black-browed-albatross.png" alt="Scientific illustration of a black-browed albatross in flight"/>
+      <p class="img-caption">03 · Black-browed Albatross</p>
+      <p class="species-note"><em>Thalassarche melanophris.</em> A Southern Ocean wanderer with a wingspan of up to 2.5 metres. The dark stripe through its eye gives the species its name, and its permanently stern expression.</p>
+    </div>
+  </div>
+
+  <div>
+    <img class="project-hero-img" src="antarctic-weddell-seal.png" alt="Scientific illustration of a Weddell seal resting" style="margin-bottom:0.5rem;"/>
+    <p class="img-caption">04 · Weddell Seal</p>
+    <p class="species-note"><em>Leptonychotes weddellii.</em> The southernmost breeding mammal in the world. Weddell seals haul out on fast ice and dive to around 600 metres, keeping their breathing holes open in the ice with their teeth.</p>
+  </div>
+
+  <hr class="divider"/>
+
+  <h2 class="project-heading">What to pack for the end of the world</h2>
+  <p class="project-body">Every traveller on the voyage receives this personal equipment checklist before departure: what the weather does at each stop, what the paperwork requires, and what to pack, layer by layer. The checklist was designed as one long illustrated sheet in Chinese. The full text is given in English alongside, so every item on the sheet can be read here.</p>
+
+  <div class="guide-layout">
+    <div>
+      <img src="antarctic-equipment-checklist.jpg" alt="Personal equipment checklist for the Antarctic Peninsula expedition, full long-form infographic in Chinese"/>
+      <p class="img-caption">Personal Equipment Checklist · Antarctic Peninsula Expedition · Full sheet</p>
+    </div>
+    <div class="guide-notes">
+      <h3>Good to know</h3>
+      <ul>
+        <li class="no-box"><strong>Reference temperatures.</strong> Auckland (transit): around 20°C. Buenos Aires: 16–24°C. Ushuaia: 4–13°C. Daytime landings in Antarctica: −5 to 5°C. Cabins on board: around 20°C.</li>
+        <li class="no-box"><strong>Time differences.</strong> Auckland is 5 hours ahead of Beijing time. Buenos Aires, Ushuaia and the Antarctic Peninsula are 11 hours behind.</li>
+        <li class="no-box"><strong>Communications.</strong> Activate international roaming in advance. Hotels provide WiFi, and WiFi on board is free of charge.</li>
+        <li class="no-box"><strong>Baggage allowance.</strong> One piece of checked luggage up to 23 kg, plus one carry-on up to 7 kg per person.</li>
+        <li class="no-box"><strong>Dressing for the cold.</strong> The Peninsula is cold and windy, with occasional snow. Several light layers beat one heavy garment, and body temperature rises while walking on landings. Dress more warmly for long periods on deck.</li>
+      </ul>
+      <h3>Essentials</h3>
+      <ul>
+        <li class="no-box"><strong>Valid passport,</strong> valid for at least 6 months beyond the travel date.</li>
+        <li class="no-box"><strong>Argentine paper visa:</strong> must cover every day of the trip and be within its validity period.</li>
+        <li class="no-box"><strong>US visa or Green Card entry:</strong> valid passport plus a valid US B1/B2 visa or US permanent resident card. If the US visa is in an old passport, bring the old passport too. Stays are capped at 30 days, and other US visa types, including F1, M and L visas, cannot be used for visa-free entry.</li>
+        <li class="no-box"><strong>Printed copies</strong> of the flight itinerary, hotel bookings, insurance documents and a personal emergency information card, with digital copies on your phone.</li>
+        <li class="no-box"><strong>Cash:</strong> USD 300–500 is enough, with small-denomination bills for tips. Argentine pesos can be exchanged locally.</li>
+        <li class="no-box"><strong>A credit card in your own name,</strong> an international card such as Mastercard or Visa.</li>
+      </ul>
+      <h3>Clothing · landing gear, built on layering</h3>
+      <ul>
+        <li>Waterproof shell jacket, 1–2 (essential: waterproof, windproof, highly breathable. One 3-in-1 polar shell jacket is issued before the trip.)</li>
+        <li>Waterproof trousers, 1–2 pairs (wide-legged enough to pull over landing boots, which can be borrowed on board free of charge)</li>
+        <li>Thermal base layers and fleece-lined leggings, several sets (close-fitting, moisture-wicking, warm)</li>
+        <li>Wool jumpers, fleeces and thin down jackets, several (easy to take on and off)</li>
+        <li>Warm hat (ideally covering the ears)</li>
+        <li>Scarf</li>
+        <li>Outdoor face covering</li>
+        <li>Fleece-lined waterproof warm gloves (photographers may also bring fingerless gloves)</li>
+        <li>Warm socks, several pairs (a wool pair over a cotton pair is more comfortable)</li>
+        <li>Ski goggles (recommended)</li>
+        <li>Casual shoes for wearing on board</li>
+      </ul>
+      <h3>Outdoor gear</h3>
+      <ul>
+        <li>Daypack or waist pack</li>
+        <li>Waterproof backpack and camera cover</li>
+        <li>Lightweight trainers for land excursions</li>
+        <li>High-protection sunglasses</li>
+        <li>SPF50+ sunscreen, moisturiser and lip balm (Antarctic UV is strong and the air is dry)</li>
+        <li>Camera equipment: memory cards, tripod, spare batteries</li>
+        <li>Binoculars for birdwatching and distant wildlife</li>
+        <li>Packable raincoat or folding umbrella</li>
+        <li>Phone and camera lanyards (so equipment is not dropped into the sea)</li>
+      </ul>
+      <h3>Personal items</h3>
+      <ul>
+        <li>Toiletries (not provided on flights or on board)</li>
+        <li>Slippers for indoor use</li>
+        <li>Antibacterial wipes or hand sanitiser</li>
+        <li>Seasickness medication</li>
+        <li>Everyday medicines and personal prescriptions</li>
+        <li>A personal thermos flask (electric kettles are not permitted)</li>
+        <li>Universal travel adapter (a power strip if you have many devices)</li>
+        <li>Swimwear (the operator arranges a polar plunge depending on weather)</li>
+        <li>Sportswear (there is a gym on board)</li>
+        <li>Earplugs, eye mask and inflatable pillow</li>
+        <li>CCC-certified power bank (no more than 20,000 mAh / 100 Wh)</li>
+        <li>Disposable hand warmers</li>
+        <li>Books, films and music</li>
+        <li>A small amount of sealed seasoning, to personal taste</li>
+      </ul>
+      <h3>Provided for you</h3>
+      <ul>
+        <li>3-in-1 polar shell jacket × 1</li>
+        <li>Activity handbook × 1</li>
+        <li>Antarctic reference book × 1</li>
+        <li>Warm hat × 1</li>
+        <li>Universal travel adapter × 1</li>
+        <li>Luggage strap set × 1 and luggage tag × 1</li>
+        <li>Postcard set × 1</li>
+        <li>Group badges × 2</li>
+        <li>Waterproof landing boots (provided on board, free to use)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="partner-credit">
+    <span class="pc-label">Produced for</span><br/>
+    <img src="cng-voyages-logo.png" alt="Chinese National Geographic Voyages logo"/>
+    <p>The ship identity above is the programme's own mark, shown as the commissioning organisation.</p>
+  </div>
+
+  <div class="project-nav">
+    <a href="index.html#archive">← All Projects</a>
+    <a href="project-07.html">Help Protect Wildlife →</a>
+  </div>
+
+</div>
+<div class="case-return"><a href="index.html#latest">← Selected work</a><a href="index.html#contact">Discuss a collaboration →</a></div></body>
+</html>
