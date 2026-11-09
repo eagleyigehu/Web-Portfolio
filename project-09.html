@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galapagos Islands Expedition — Emma Hu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18;
+    --ink-2: #4a4840;
+    --ink-3: #8a8880;
+    --accent: #2e6f68;
+    --rule: rgba(26,24,20,0.12);
+    --serif: 'EB Garamond', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: linear-gradient(to bottom, #6f9e97 0%, #9dc0b4 20%, #c9d8c8 40%, #e9e9da 60%, #f3ecd9 80%, #f7e9cd 100%);
+    background-attachment: scroll;
+    background-size: 100% 500vh;
+    background-repeat: no-repeat;
+    background-color: #f7e9cd;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 2.5rem;
+    border-bottom: 0.5px solid var(--rule);
+    background: rgba(111,158,151,0.5);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-back {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--accent); }
+  .nav-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--ink);
+  }
+  .project-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5rem 2.5rem 8rem;
+  }
+  .project-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .project-title {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--ink);
+  }
+  .project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2.5rem;
+    border-top: 0.5px solid var(--rule);
+    border-bottom: 0.5px solid var(--rule);
+    padding: 1.2rem 0;
+    margin-bottom: 3rem;
+  }
+  .meta-label {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+  .meta-value {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--ink-2);
+  }
+  .project-hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 3rem;
+  }
+  .project-body {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--ink-2);
+    line-height: 1.85;
+    margin-bottom: 1.8rem;
+    max-width: 680px;
+  }
+  .project-body strong { color: var(--ink); font-weight: 500; }
+  .project-heading {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--ink);
+    margin: 3rem 0 1rem;
+    border-left: 2px solid var(--accent);
+    padding-left: 1rem;
+  }
+  .image-grid {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .image-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+  .image-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .img-caption {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--ink-3);
+    letter-spacing: 0.08em;
+    margin-top: 0.5rem;
+  }
+  .species-note {
+    font-family: var(--serif);
+    font-size: 0.98rem;
+    color: var(--ink-2);
+    line-height: 1.6;
+    margin-top: 0.45rem;
+    max-width: 640px;
+  }
+  .species-note em { color: var(--ink); }
+  .guide-layout {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    gap: 2.2rem;
+    align-items: start;
+    margin: 2rem 0;
+  }
+  .guide-layout img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .guide-notes h3 {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 1.4rem 0 0.5rem;
+  }
+  .guide-notes h3:first-child { margin-top: 0; }
+  .guide-notes p, .guide-notes li {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--ink-2);
+    line-height: 1.65;
+  }
+  .guide-notes ul { list-style: none; }
+  .guide-notes li { padding-left: 1rem; position: relative; margin-bottom: 0.32rem; }
+  .guide-notes li::before { content: "☐"; position: absolute; left: 0; color: var(--ink-3); font-size: 0.72rem; top: 0.1rem; }
+  .guide-notes li.no-box { padding-left: 0; }
+  .guide-notes li.no-box::before { content: ""; }
+  .guide-notes strong { color: var(--ink); font-weight: 500; }
+  .partner-credit {
+    text-align: center;
+    margin-top: 4.5rem;
+  }
+  .partner-credit .pc-label {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .partner-credit img {
+    width: min(300px, 70%);
+    height: auto;
+  }
+  .partner-credit p {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    margin-top: 1rem;
+  }
+  .divider {
+    border: none;
+    border-top: 0.5px solid var(--rule);
+    margin: 4rem 0;
+  }
+  .project-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 0.5px solid var(--rule);
+    margin-top: 5rem;
+    padding-top: 2rem;
+  }
+  .project-nav a {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .project-nav a:hover { color: var(--accent); }
+  @media (max-width: 640px) {
+    .project-wrap { padding: 3rem 1.2rem 5rem; }
+    .image-grid.cols-2 { grid-template-columns: 1fr; }
+    .guide-layout { grid-template-columns: 1fr; }
+    .project-meta { gap: 0.8rem 1.5rem; }
+  }
+</style>
+<link rel="stylesheet" href="case.css"></head>
+<body>
+
+<nav>
+  <a href="index.html#archive" class="nav-back">← Back</a>
+  <span class="nav-title">Galapagos Islands Expedition</span>
+</nav>
+
+<div class="project-wrap"><aside class="case-brief" aria-label="Project overview"><h2>Species artwork and a traveller's equipment guide for a Galapagos Islands expedition: the animals guests will meet on the equator, and everything they pack to meet them.</h2><dl><div><dt>Purpose</dt><dd>Science illustration &amp; education, applied as expedition communication for an equatorial Pacific voyage programme.</dd></div><div><dt>My contribution</dt><dd>Species illustrations of four Galapagos animals, and the design and layout of the personal equipment checklist, a long-form illustrated guide issued to travellers before departure.</dd></div><div><dt>Outputs &amp; status</dt><dd>Four species illustrations · One long-form equipment checklist, Chinese edition with the full English text alongside<br>Delivered 2026</dd></div></dl><p>Produced for the China National Geographic Voyages Galapagos Islands programme, with the National Zoological Museum of China</p></aside>
+
+  <p class="project-eyebrow">China National Geographic Voyages · Expedition Communication · 2026</p>
+  <h1 class="project-title">Galapagos Islands Expedition</h1>
+
+  <div class="project-meta">
+    <div class="meta-item">
+      <span class="meta-label">Year</span>
+      <span class="meta-value">2026</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Organisation</span>
+      <span class="meta-value">China National Geographic Voyages × National Zoological Museum of China</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Role</span>
+      <span class="meta-value">Scientific Illustration &amp; Information Design</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Formats</span>
+      <span class="meta-value">Species illustration series · Long-form infographic</span>
+    </div>
+  </div>
+
+  <h2 class="project-heading">Four endemics of the equator</h2>
+  <p class="project-body">Before travellers meet Galapagos wildlife in person, they meet it on paper. These four illustrations introduce the species an equatorial voyage is most likely to encounter: drawn to be recognised again at a distance, on black lava, in the shallows and in the air.</p>
+
+  <div>
+    <img class="project-hero-img" src="galapagos-penguin.png" alt="Scientific illustration of a Galapagos penguin standing" style="margin-bottom:0.5rem;max-width:460px;margin-left:auto;margin-right:auto;"/>
+    <p class="img-caption">01 · Galapagos Penguin</p>
+    <p class="species-note"><em>Spheniscus mendiculus.</em> The only penguin that lives at the equator, most of them on Isabela and Fernandina, where the cold Cromwell Current wells up from the deep. At under 50 cm tall it is one of the smallest penguins in the world, and one of the rarest.</p>
+  </div>
+
+  <div class="image-grid cols-2">
+    <div>
+      <img src="galapagos-frigatebird.png" alt="Scientific illustration of a male great frigatebird with its red throat pouch inflated"/>
+      <p class="img-caption">02 · Great Frigatebird</p>
+      <p class="species-note"><em>Fregata minor.</em> The male inflates his scarlet throat pouch like a balloon to display beneath the nesting colonies. A frigatebird cannot land on the water, its feathers are not waterproof, so it feeds entirely on the wing, snatching flying fish and harrying boobies into giving up their catch.</p>
+    </div>
+    <div>
+      <img src="galapagos-blue-footed-booby.png" alt="Scientific illustration of a blue-footed booby standing"/>
+      <p class="img-caption">03 · Blue-footed Booby</p>
+      <p class="species-note"><em>Sula nebouxii.</em> The famous blue feet are an honest advertisement: the colour comes from pigments in fresh fish, so the bluest feet belong to the healthiest birds. Courtship is a slow, high-stepping dance in which each bird shows its feet to the other.</p>
+    </div>
+  </div>
+
+  <div>
+    <img class="project-hero-img" src="galapagos-giant-tortoise.png" alt="Scientific illustration of a Galapagos giant tortoise walking" style="margin-bottom:0.5rem;"/>
+    <p class="img-caption">04 · Galapagos Giant Tortoise</p>
+    <p class="species-note"><em>Chelonoidis niger.</em> The animal the islands are named after: galápago is an old Spanish word for a saddle, and for the tortoises whose shells recall one. Shell shape follows the island, domed where the ground is lush, saddle-shaped where a long neck is needed to reach high cactus. Individuals can live well beyond a century.</p>
+  </div>
+
+  <hr class="divider"/>
+
+  <h2 class="project-heading">What to pack for the equator</h2>
+  <p class="project-body">Every traveller on the voyage receives this personal equipment checklist before departure: what the weather does at each stop from Amsterdam to Guayaquil, what the paperwork requires, and what to pack, layer by layer. The checklist was designed as one long illustrated sheet in Chinese. The full text is given in English alongside, so every item on the sheet can be read here.</p>
+
+  <div class="guide-layout">
+    <div>
+      <img src="galapagos-equipment-checklist.jpg" alt="Personal equipment checklist for the Galapagos Islands expedition, full long-form infographic in Chinese"/>
+      <p class="img-caption">Personal Equipment Checklist · Galapagos Islands Expedition · Full sheet</p>
+    </div>
+    <div class="guide-notes">
+      <h3>Good to know</h3>
+      <ul>
+        <li class="no-box"><strong>Reference temperatures (January).</strong> Amsterdam (transit): around 20°C, constant indoor temperature. Quito: cool, with a wide swing between day and night, averaging 8–22°C. The Galapagos Islands: warm and humid, averaging 16–28°C. Guayaquil: averaging 20–29°C.</li>
+        <li class="no-box"><strong>Dressing for the islands.</strong> Wear earth tones. Avoid yellow clothing and backpacks: the islands' wasps are sensitive to yellow and may attack.</li>
+      </ul>
+      <h3>Essentials</h3>
+      <ul>
+        <li class="no-box"><strong>Valid passport,</strong> valid for at least 6 months beyond the travel date.</li>
+        <li class="no-box"><strong>Ecuador e-visa:</strong> printed, with a copy saved on your phone.</li>
+        <li class="no-box"><strong>Printed copies</strong> of the flight itinerary, hotel bookings, insurance documents and a personal safety information card, carried with you, with digital copies on your phone.</li>
+        <li class="no-box"><strong>Cash:</strong> US dollars are widely accepted locally, carry a moderate amount.</li>
+        <li class="no-box"><strong>International credit cards</strong> such as Visa and Mastercard, stored separately in case of loss or theft.</li>
+        <li class="no-box"><strong>The expedition handbook,</strong> for the schedule and for team and individual arrangements.</li>
+      </ul>
+      <h3>Clothing</h3>
+      <ul>
+        <li>Short-sleeved T-shirts, several</li>
+        <li>Lightweight windproof and waterproof jacket, 1–2</li>
+        <li>Fleece or jacket set, 1–2 (for cool mornings and evenings on board, rainy days and temperature drops)</li>
+        <li>Lightweight outdoor or casual trousers, 3–4 pairs</li>
+        <li>Shorts, 2–3 (essential, convenient for wet landings)</li>
+        <li>Water shoes (essential for wet landings, flat soles recommended)</li>
+        <li>Wide-brimmed hat covering the head, face and neck (mainly for sun protection)</li>
+        <li>Comfortable, well-fitting walking shoes</li>
+        <li>Swimwear (essential, worn while snorkelling)</li>
+        <li>Snorkelling gear (the ship provides the wetsuit, mask, fins and a disposable snorkel tube. You may bring your own, and if you are short-sighted, bring a prescription mask or wear contact lenses)</li>
+        <li>Pyjamas and slippers</li>
+        <li>A change of personal clothing</li>
+      </ul>
+      <h3>Outdoor gear</h3>
+      <ul>
+        <li>Travel backpack (a waterproof one is recommended, used at wet landings)</li>
+        <li>Sunglasses</li>
+        <li>Sunscreen (highest protection, against sunburn)</li>
+        <li>Rain gear (a raincoat or a folding umbrella)</li>
+        <li>Insect repellent</li>
+        <li>Camera equipment (telephoto lens, underwater camera, tripod, memory cards)</li>
+        <li>Dry bags or sealable plastic bags, to protect electronics from dust, moisture and rain</li>
+      </ul>
+      <h3>Recommended items</h3>
+      <ul>
+        <li>Personal toiletries (toothpaste, toothbrush, towel, soap, shampoo, shower gel)</li>
+        <li>A towel (a medium one, if needed)</li>
+        <li>Disinfectant wipes or tissues (small packs, easy to carry)</li>
+        <li>Seasickness medication (taken in advance, it reduces the discomfort of the swell)</li>
+        <li>Everyday medicines (cold remedies, anti-inflammatories, stomach remedies, painkillers, or personal prescriptions)</li>
+        <li>A power strip (if you carry several electronic devices)</li>
+        <li>Trekking poles (also usable for walks on the islands)</li>
+        <li>A personal insulated flask</li>
+        <li>Neck pillow, earplugs and eye mask (for the flight)</li>
+        <li>Quick energy snacks for activity days, such as chocolate and energy bars</li>
+        <li>Local travel guides and books on history and culture</li>
+        <li>International roaming on your phone</li>
+      </ul>
+      <h3>Provided for you</h3>
+      <ul>
+        <li>Expedition handbook × 1</li>
+        <li>Commemorative T-shirt × 1</li>
+        <li>Plug adapter × 1</li>
+        <li>Luggage strap set × 1</li>
+        <li>China National Geographic Voyages luggage tag × 1</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="partner-credit">
+    <span class="pc-label">Produced for</span><br/>
+    <img src="cng-voyages-logo.png" alt="Chinese National Geographic Voyages logo"/>
+    <p>The ship identity above is the programme's own mark, shown as the commissioning organisation. The expedition is co-branded with the National Zoological Museum of China.</p>
+  </div>
+
+  <div class="project-nav">
+    <a href="index.html#archive">← All Projects</a>
+    <a href="project-08.html">Antarctic Peninsula Expedition →</a>
+  </div>
+
+</div>
+<div class="case-return"><a href="index.html#latest">← Selected work</a><a href="index.html#contact">Discuss a collaboration →</a></div></body>
+</html>
