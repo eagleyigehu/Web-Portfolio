@@ -397,6 +397,31 @@
   .thumb:hover { opacity: 0.8; }
   .thumb.active { opacity: 1; border-color: var(--ink); }
 
+
+  .ocarina-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+    align-items: center;
+    gap: clamp(1.5rem, 5vw, 4rem);
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 8vw, 8rem);
+    background: #f0ede8;
+    border-block: 1px solid var(--rule);
+  }
+  .ocarina-intro .chapter-title { margin-bottom: 0.65rem; }
+  .ocarina-intro .pair-label { color: var(--ink-2); }
+  .ocarina-intro video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: var(--ink);
+    cursor: auto;
+  }
+  @media (max-width: 768px) {
+    .ocarina-intro { grid-template-columns: 1fr; }
+  }
+
 </style>
 <link rel="stylesheet" href="case.css"></head>
 <body>
@@ -421,6 +446,19 @@
   </div>
   <div class="scroll-hint">scroll</div>
 </section><aside class="case-brief" aria-label="Project overview"><h2>Turning bird-ringing fieldwork into an exhibition about one individual life.</h2><dl><div><dt>Purpose</dt><dd>Exhibitions & narrative experiences</dd></div><div><dt>My contribution</dt><dd>Photography, illustration, writing &amp; layout; exhibition developed with credited collaborators.</dd></div><div><dt>Outputs & status</dt><dd>Exhibition · Scientific illustration · Ceramic ocarina · 56-page booklet<br>Exhibited</dd></div></dl><p>Arts SU Exhibition &amp; Project Space, CSM · 14 Nov–3 Dec 2025</p></aside>
+
+<section class="ocarina-intro" aria-labelledby="ocarina-title">
+  <div>
+    <p class="pair-label">Ceramic Bird Ocarina</p>
+    <h2 class="chapter-title" id="ocarina-title">Hear the bird sing</h2>
+    <p id="ocarina-hint">Press play to hear the ocarina performance. Sound on.</p>
+  </div>
+  <video controls playsinline preload="none" width="1280" height="720"
+         aria-labelledby="ocarina-title" aria-describedby="ocarina-hint"
+         src="ocarina-performance.mp4">
+    <a href="ocarina-performance.mp4">Download the ocarina performance</a>
+  </video>
+</section>
 
 <!-- ═══════════ FULL BLEED 1: Exhibition Overview ═══════════ -->
 <div class="full-bleed reveal">
